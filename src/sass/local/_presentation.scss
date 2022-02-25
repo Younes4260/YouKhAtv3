@@ -1,0 +1,132 @@
+@import './bulles';
+@import './colors';
+@import './mixins';
+
+body {
+    background: $bleupale1;
+    background: -moz-linear-gradient(169deg, $bleupale1 9%, $bleupale2 19%, $bleu1 31%, $bleu2 43%, $bleufoncee1 56%, $bleufoncee2 74%, $bleufoncee3 89%);
+    background: -webkit-linear-gradient(169deg, $bleupale1 9%, $bleupale2 19%, $bleu1 31%, $bleu2 43%, $bleufoncee1 56%, $bleufoncee2 74%, $bleufoncee3 89%);
+    background: linear-gradient(169deg, $bleupale1 9%, $bleupale2 19%, $bleu1 31%, $bleu2 43%, $bleufoncee1 56%, $bleufoncee2 74%, $bleufoncee3 89%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$bleupale1,endColorstr=$bleufoncee3,GradientType=1);
+  }
+
+body {
+overflow: hidden;
+
+@include tablet {
+    overflow-y: scroll;
+}
+
+@include phone {
+    overflow-y: scroll;
+}
+}
+
+.Intro {
+    header {
+        display: flex;
+        flex-direction: row;
+        height: 20vh;
+
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    nav {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10vh;
+
+        h1 {
+            color: white; 
+        }
+
+        div {
+            margin: 0 5vw;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            h1 {
+                color: rgba(255, 255, 255, 0.5);
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+    }
+
+    section {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        height: 80vh;
+
+        @include tablet {
+            flex-direction: column;
+            height: 150vh;
+            align-items: center;
+        }
+
+        @include phone {
+            flex-direction: column;
+            height: 150vh;
+            align-items: center;
+        }
+
+        #bloc1,
+        #bloc2,
+        #bloc3 {
+            max-width: 250px;
+            width: 30vw;
+            height: 250px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+
+            @include tablet {
+                max-width: 300px;
+                height: 300px;
+                width: 100vw;
+            }
+
+            @include phone {
+                max-width: 275px;
+                height: 275px;
+                width: 100vw;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        #bloc1 {
+            position: relative;
+            top: 5vh;
+        }
+
+        #bloc2 {
+            position: relative;
+            top: -3vh;
+        }
+
+        #bloc3 {
+            position: relative;
+            top: 13vh;
+        }
+
+    }
+}

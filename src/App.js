@@ -23,24 +23,73 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
-
 function App() {
-
-  const [user] = useAuthState(auth);
-
+ const OnPrototype = true;
   return (
     <div className="App">
-      <header>
-        <h1>⚛️🔥💬</h1>
-        <SignOut />
-      </header>
-
-      <section>
-        {user ? <ChatRoom /> : <SignIn />}
-      </section>
-
+        {OnPrototype ? <Prototype /> : <Presentation />}
     </div>
   );
+}
+
+function Presentation() {
+  return (
+  <div className="Intro">
+    <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
+    <nav>
+    <h1>Bienvenue!</h1>  
+    <div className="bulle"><h1><a>YouKhAt</a></h1></div> 
+    </nav>
+<section>
+    <div id = "bloc1" className="bullesection">
+        <h1>Avec React.js</h1>
+    </div>
+    <div id = "bloc2" className="bullesection">
+        <h1>Avec une base de données</h1>
+    </div>
+    <div id = "bloc3" className="bullesection">
+        <h1>Appris sur codeacadamy</h1>
+    </div>
+</section>
+</div>
+  )
+}
+
+function Prototype() {
+  const [user] = useAuthState(auth);
+ return (
+  <div className="Prototype">
+        <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
+  <header>
+  <button>Retour au site</button>
+    <h1>YouKhAt</h1>
+    <SignOut />
+  </header>
+  {user ? <ChatRoom /> : <SignIn />}
+</div>
+ )
 }
 
 function SignIn() {
@@ -52,8 +101,9 @@ function SignIn() {
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+    <section>
+      <button className="sign-in" onClick={signInWithGoogle}>Connecter avec Google</button>
+    </section> 
     </>
   )
 
@@ -61,7 +111,7 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="sign-out" onClick={() => auth.signOut()}>Déconnecter</button>
   )
 }
 
@@ -69,8 +119,7 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(25);
-
+  const query = messagesRef.orderBy('createdAt').limitToLast(50);
   const [messages] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
@@ -92,7 +141,8 @@ function ChatRoom() {
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
-  return (<>
+  return (
+    <section>
     <main>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
@@ -103,12 +153,13 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Écrire votre message" />
 
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      <button type="submit" disabled={!formValue}>Envoyer</button>
 
     </form>
-  </>)
+    </section>
+  )
 }
 
 
