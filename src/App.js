@@ -24,33 +24,76 @@ const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
 function App() {
- const OnPrototype = true;
+ const OnPrototype = false;
   return (
     <div className="App">
-        {OnPrototype ? <Prototype /> : <Presentation />}
+      <Site />
+      <Bulles />
     </div>
   );
+}
+
+class Site extends React.Component {
+  
+  constructor(props){
+    super(props)
+    this.state = {
+     isOnPrototype: false
+    }
+ 
+    this.toggleState = this.toggleState.bind(this);
+  }
+    
+  toggleState() {
+  this.setState ({
+   isOnPrototype:!this.state.isOnPrototype }
+  )
+ } 
+
+  render(){
+   if(this.state.isOnPrototype){
+     return(
+       <>
+       <div id="BoutonToggle">
+       <button onClick={this.toggleState}>YouKhAt</button>
+       </div>
+     <Prototype />
+     </>   
+     )
+     }
+   else{
+     return(
+     <>
+     <div id="BulleToggle">
+      <div className="bulle" onClick={this.toggleState}><h1>Clavardez!</h1></div>
+      </div>
+     <Presentation />
+     </>
+     )          
+   }       
+ }
+}
+
+function Bulles() {
+  return (
+    <div id="background-wrap">
+    <div class="bubble x1"></div>
+    <div class="bubble x2"></div>
+    <div class="bubble x3"></div>
+    <div class="bubble x4"></div>
+    <div class="bubble x5"></div>
+    <div class="bubble x6"></div>
+    <div class="bubble x7"></div>
+    <div class="bubble x8"></div>
+    <div class="bubble x9"></div>
+    <div class="bubble x10"></div>
+</div>
+  )
 }
 
 function Presentation() {
   return (
   <div className="Intro">
-    <div id="background-wrap">
-        <div class="bubble x1"></div>
-        <div class="bubble x2"></div>
-        <div class="bubble x3"></div>
-        <div class="bubble x4"></div>
-        <div class="bubble x5"></div>
-        <div class="bubble x6"></div>
-        <div class="bubble x7"></div>
-        <div class="bubble x8"></div>
-        <div class="bubble x9"></div>
-        <div class="bubble x10"></div>
-    </div>
-    <nav>
-    <h1>Bienvenue!</h1>  
-    <div className="bulle"><h1><a>YouKhAt</a></h1></div> 
-    </nav>
 <section>
     <div id = "bloc1" className="bullesection">
         <h1>Avec React.js</h1>
@@ -70,20 +113,7 @@ function Prototype() {
   const [user] = useAuthState(auth);
  return (
   <div className="Prototype">
-        <div id="background-wrap">
-        <div class="bubble x1"></div>
-        <div class="bubble x2"></div>
-        <div class="bubble x3"></div>
-        <div class="bubble x4"></div>
-        <div class="bubble x5"></div>
-        <div class="bubble x6"></div>
-        <div class="bubble x7"></div>
-        <div class="bubble x8"></div>
-        <div class="bubble x9"></div>
-        <div class="bubble x10"></div>
-    </div>
   <header>
-  <button>Retour au site</button>
     <h1>YouKhAt</h1>
     <SignOut />
   </header>

@@ -336,6 +336,26 @@ body {
   top: 13vh;
 }
 
+#BulleToggle {
+  display: flex;
+  justify-content: center;
+}
+
+#BulleToggle .bulle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+#BulleToggle .bulle h1 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2.5em;
+}
+
 body {
   background: #00D4FF;
   background: linear-gradient(169deg, #00D4FF 9%, #17A9E0 19%, #1a7fbf 31%, #1c5d9f 43%, #0e3c7c 56%, #0d2059 74%, #130a58 89%);
@@ -343,6 +363,8 @@ body {
 }
 
 .App {
+  margin-top: 1vh;
+  transition: opacity 1s ease;
   height: 100vh;
 }
 
@@ -350,9 +372,9 @@ body {
   width: 65vw;
   margin: auto auto;
   background-color: black;
-  border: black solid 25px;
+  border: black solid 10px;
   border-radius: 50px;
-  height: 90vh;
+  height: 82.5vh;
 }
 
 .App .Prototype header {
@@ -377,7 +399,7 @@ body {
   justify-content: center;
   margin: auto;
   width: 50vw;
-  height: 80vh;
+  height: 65vh;
   border-radius: 0 0 30px 30px;
 }
 
@@ -494,4 +516,15 @@ body {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
+}
+
+#BoutonToggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+#BoutonToggle h1 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2.5em;
 }

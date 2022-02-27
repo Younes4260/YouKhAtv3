@@ -10,14 +10,16 @@ body {
 }
 
 .App {
+  margin-top: 1vh;
+  transition: opacity 1s ease;
   height: 100vh;
   .Prototype {
     width: 65vw;
     margin: auto auto;
     background-color: black;
-    border: black solid 25px;
+    border: black solid 10px;
     border-radius: 50px;
-    height: 90vh;
+    height: 82.5vh;
     header {
       height: 10vh;
       min-height: 50px;
@@ -40,7 +42,7 @@ body {
       justify-content: center;
       margin: auto;
       width: 50vw;
-      height: 80vh;
+      height: 65vh;
       border-radius: 0 0 30px 30px;
     }
   }
@@ -164,4 +166,14 @@ body {
     border-radius: 50%;
     margin: 2px 5px;
   }
+}
+
+#BoutonToggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+      h1 {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 2.5em;
+      }
 }
