@@ -91,9 +91,39 @@ function Bulles() {
   )
 }
 
-function Presentation() {
+class Presentation extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+     isOnLightbox: false,
+     NumberText: 0
+    }
+ 
+    this.toggleState = this.toggleState.bind(this);
+  }
+    
+  toggleState() {
+  this.setState ({
+   isOnLightbox:!this.state.isOnLightbox 
+  })
+ } 
+
+ render() {
+  const texte = ["Ce truc a été fait avec React et c'est très cool", 
+  "Firebase est trop fort utilisez-le!", 
+  "CodeAcademy est nice aussi allez acheter!"]
+  const textelire = texte[this.state.NumberText]
+  if(this.state.isOnLightbox) {
   return (
   <div className="Intro">
+    <div className="backgroundlightbox">
+    <div className="lightbox">
+      <div className="Headerlightbox">
+      <button onClick={this.toggleState}>shut the fuck up</button>
+      </div>
+      <p>{textelire}</p>
+    </div>
+    </div>
 <section>
     <div id = "bloc1" className="bullesection">
         <h1>Avec React.js</h1>
@@ -107,7 +137,41 @@ function Presentation() {
 </section>
 </div>
   )
+  }
+  else {
+    return (
+      <div className="Intro">
+  <section>
+      <div id = "bloc1" className="bullesection" onClick={() => {
+        this.toggleState();
+        this.setState ({
+          NumberText: 0
+        })}}
+        >
+          <h1>Avec React.js</h1>
+      </div>
+      <div id = "bloc2" className="bullesection" onClick={() => {
+        this.toggleState();
+        this.setState ({
+          NumberText: 1
+        })}} >
+          <h1>Avec une base de données</h1>
+      </div>
+      <div id = "bloc3" className="bullesection" onClick={() => {
+        this.toggleState();
+        this.setState ({
+          NumberText: 2
+        })}}>
+          <h1>Appris sur codeacadamy</h1>
+      </div>
+  </section>
+  </div>
+    )
+  }
 }
+}
+
+/* Prototype */
 
 function Prototype() {
   const [user] = useAuthState(auth);
@@ -121,6 +185,8 @@ function Prototype() {
 </div>
  )
 }
+
+/* Gestion de connection */
 
 function SignIn() {
 
@@ -145,6 +211,8 @@ function SignOut() {
   )
 }
 
+
+/* Gestion du clavardage */
 
 function ChatRoom() {
   const dummy = useRef();
@@ -200,10 +268,12 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
+      <button>delete</button>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       <p>{text}</p>
     </div>
   </>)
+
 }
 
 
