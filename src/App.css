@@ -217,6 +217,99 @@ body {
   }
 }
 
+@media only screen and (max-width: 37.5em) {
+  body {
+    height: 200vh;
+  }
+  body .Intro section {
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body .Intro section #bloc1,
+  body .Intro section #bloc2,
+  body .Intro section #bloc3 {
+    max-width: 275px;
+    height: 275px;
+    width: 100vw;
+    position: relative;
+    right: 0;
+    left: 0;
+  }
+  body .Intro section #bloc1 h1,
+  body .Intro section #bloc2 h1,
+  body .Intro section #bloc3 h1 {
+    font-size: 1.3rem;
+  }
+  body .Intro section #bloc1 #bloc2,
+  body .Intro section #bloc2 #bloc2,
+  body .Intro section #bloc3 #bloc2 {
+    position: relative;
+    left: 0;
+  }
+  #BulleToggle .bulle {
+    margin-bottom: 0;
+    width: 125px;
+    height: 125px;
+  }
+  #BulleToggle .bulle h1 {
+    font-size: 1.33em;
+  }
+  #BulleToggle #bloc1 {
+    right: 10vw;
+  }
+  #BulleToggle #bloc2 {
+    left: 7vw;
+  }
+  #BulleToggle #bloc3 {
+    right: 5vw;
+  }
+}
+
+@media only screen and (max-width: 65em) {
+  body {
+    height: 210vh;
+  }
+  body .Intro section {
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body .Intro section #bloc1,
+  body .Intro section #bloc2,
+  body .Intro section #bloc3 {
+    max-width: 275px;
+    height: 275px;
+    width: 100vw;
+    position: relative;
+    top: 0;
+  }
+  body .Intro section #bloc1 h1,
+  body .Intro section #bloc2 h1,
+  body .Intro section #bloc3 h1 {
+    font-size: 1.3rem;
+  }
+  body .Intro section #bloc1 {
+    right: 10vw;
+  }
+  body .Intro section #bloc2 {
+    left: 7vw;
+  }
+  body .Intro section #bloc3 {
+    right: 5vw;
+  }
+  #BulleToggle .bulle {
+    margin-bottom: 0;
+    width: 125px;
+    height: 125px;
+  }
+  #BulleToggle .bulle h1 {
+    font-size: 2em;
+  }
+}
+
 .Intro .backgroundlightbox {
   margin: 0 auto;
   position: fixed;
@@ -319,22 +412,6 @@ body {
   height: 80vh;
 }
 
-@media only screen and (max-width: 65em) {
-  .Intro section {
-    flex-direction: column;
-    height: 150vh;
-    align-items: center;
-  }
-}
-
-@media only screen and (max-width: 37.5em) {
-  .Intro section {
-    flex-direction: column;
-    height: 150vh;
-    align-items: center;
-  }
-}
-
 .Intro section #bloc1,
 .Intro section #bloc2,
 .Intro section #bloc3 {
@@ -345,26 +422,6 @@ body {
   align-items: center;
   justify-content: center;
   display: flex;
-}
-
-@media only screen and (max-width: 65em) {
-  .Intro section #bloc1,
-  .Intro section #bloc2,
-  .Intro section #bloc3 {
-    max-width: 300px;
-    height: 300px;
-    width: 100vw;
-  }
-}
-
-@media only screen and (max-width: 37.5em) {
-  .Intro section #bloc1,
-  .Intro section #bloc2,
-  .Intro section #bloc3 {
-    max-width: 275px;
-    height: 275px;
-    width: 100vw;
-  }
 }
 
 .Intro section #bloc1 h1,
@@ -473,11 +530,11 @@ body {
 }
 
 .App main::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #0e3c7c;
 }
 
 .App main::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #1a7fbf;
 }
 
 .App form {

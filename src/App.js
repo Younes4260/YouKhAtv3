@@ -6,6 +6,8 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 import 'firebase/compat/analytics';
 
+import ReactTooltip from "react-tooltip";
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
@@ -55,7 +57,8 @@ class Site extends React.Component {
      return(
        <>
        <div id="BoutonToggle">
-       <button onClick={this.toggleState}>YouKhAt</button>
+       <button data-tip="Cliquez ici pour retourner dans le site de présentation!" onClick={this.toggleState}>YouKhAt</button>
+       <ReactTooltip globalEventOff="click" />
        </div>
      <Prototype />
      </>   
@@ -65,14 +68,16 @@ class Site extends React.Component {
      return(
      <>
      <div id="BulleToggle">
-      <div className="bulle" onClick={this.toggleState}><h1>Clavardez!</h1></div>
+      <div className="bulle" data-tip="Cliquez pour vous lancer dans le prototype!" onClick={this.toggleState}><h1>Clavardez!</h1></div>
       </div>
+      <ReactTooltip globalEventOff="click" />
      <Presentation />
      </>
      )          
    }       
  }
 }
+
 
 function Bulles() {
   return (
@@ -142,7 +147,8 @@ class Presentation extends React.Component {
     return (
       <div className="Intro">
   <section>
-      <div id = "bloc1" className="bullesection" onClick={() => {
+      <ReactTooltip globalEventOff="click" />
+      <div id = "bloc1" className="bullesection" data-tip="Cliquez pour plus de détail!" onClick={() => {
         this.toggleState();
         this.setState ({
           NumberText: 0
@@ -150,14 +156,14 @@ class Presentation extends React.Component {
         >
           <h1>Avec React.js</h1>
       </div>
-      <div id = "bloc2" className="bullesection" onClick={() => {
+      <div id = "bloc2" className="bullesection" data-tip="Cliquez pour plus de détail!" onClick={() => {
         this.toggleState();
         this.setState ({
           NumberText: 1
         })}} >
           <h1>Avec une base de données</h1>
       </div>
-      <div id = "bloc3" className="bullesection" onClick={() => {
+      <div id = "bloc3" className="bullesection" data-tip="Cliquez pour plus de détail!" onClick={() => {
         this.toggleState();
         this.setState ({
           NumberText: 2
@@ -198,7 +204,8 @@ function SignIn() {
   return (
     <>
     <section>
-      <button className="sign-in" onClick={signInWithGoogle}>Connecter avec Google</button>
+      <button className="sign-in" data-tip="Cliquez ici pour vous connecter utilisant un compte Google" onClick={signInWithGoogle}>Connecter avec Google</button>
+      <ReactTooltip globalEventOff="click" />
     </section> 
     </>
   )
@@ -207,7 +214,10 @@ function SignIn() {
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Déconnecter</button>
+    <>
+     <ReactTooltip globalEventOff="click" />
+    <button className="sign-out" data-tip="Cliquez ici pour vous déconnecter" onClick={() => auth.signOut()}>Déconnecter</button>
+    </>
   )
 }
 
@@ -250,25 +260,26 @@ function ChatRoom() {
     </main>
 
     <form onSubmit={sendMessage}>
+      <input value={formValue} data-tip="Écrivez votre message à envoyer ici" onChange={(e) => setFormValue(e.target.value)} placeholder="Écrire votre message" />
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Écrire votre message" />
-
-      <button type="submit" disabled={!formValue}>Envoyer</button>
-
+      <button type="submit" data-tip="Cliquez ici pour envoyer votre message" disabled={!formValue}>Envoyer</button>
+     
     </form>
+    <ReactTooltip globalEventOff="click" />
     </section>
   )
 }
 
 
 function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message;
+  const { text, uid, photoURL} = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
+  // const DeleteMessage = firestore.collection('messages').doc('RAoTYP5A99uEfvmYc0dp').delete()
+
   return (<>
     <div className={`message ${messageClass}`}>
-      <button>delete</button>
       <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       <p>{text}</p>
     </div>
