@@ -12,13 +12,15 @@ body {
 .App {
 
   #BoutonToggle {
-   button {
-     margin-top: 1vh;
-   }
+    button {
+      margin-top: 1vh;
+    }
   }
+
   margin-top: 1vh;
   transition: opacity 1s ease;
   height: 100vh;
+
   .Prototype {
     width: 65vw;
     margin: auto auto;
@@ -26,6 +28,13 @@ body {
     border: black solid 10px;
     border-radius: 50px;
     height: 82.5vh;
+
+    @include tablet {
+      position: fixed;
+      left: 7.5vw;
+      width: 80vw;
+    }
+
     header {
       height: 10vh;
       min-height: 50px;
@@ -39,6 +48,41 @@ body {
       padding: 0px 50px;
       box-sizing: border-box;
       border-radius: 30px 30px 0 0;
+
+      button {
+        width: 20vw;
+        height: 7vh;
+        padding: 0;
+        margin: 0;
+        p {
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      @include tablet {
+        font-size: 0.7rem;
+        padding: 0 25px;
+
+        button {
+          width: 30vw;
+          height: 7.5vh;
+          padding: 0;
+
+          p {
+            font-size: 1rem;
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+
+      @include phone {
+        button {
+          height: 6.5vh;
+        }
+      }
+
     }
 
     section {
@@ -50,6 +94,10 @@ body {
       width: 50vw;
       height: 65vh;
       border-radius: 0 0 30px 30px;
+
+      @include tablet {
+        width: 70vw;
+      }
     }
   }
 
@@ -80,9 +128,18 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
     button {
       width: 15vw;
-      background-color: rgb(56, 56, 143);
+      background-color: $bleu2;
+      transition: background-color ease 0.3s;
+
+      @include tablet {
+        width: 25vw;
+        padding: 0;
+        z-index: 0;
+        font-size: 1rem;
+      }
     }
   }
 
@@ -97,6 +154,15 @@ body {
     border: none;
     padding: 0 10px;
     border-radius: 20px;
+
+    @include tablet {
+      width: 35vw;
+      font-size: 1rem;
+    }
+
+    @include phone {
+      font-size: 0.75rem;
+    }
   }
 
   button {
@@ -112,7 +178,7 @@ body {
     border-radius: 15px;
 
     &:disabled {
-      opacity: 0.5;
+      background-color: $bleufoncee1;
       cursor: not-allowed;
     }
   }
@@ -178,8 +244,9 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
-      h1 {
-          color: rgba(255, 255, 255, 0.5);
-          font-size: 2.5em;
-      }
+
+  h1 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2.5em;
+  }
 }

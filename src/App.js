@@ -117,16 +117,22 @@ class Presentation extends React.Component {
   const texte = ["Ce truc a été fait avec React et c'est très cool", 
   "Firebase est trop fort utilisez-le!", 
   "CodeAcademy est nice aussi allez acheter!"]
+  const titre = ["Avec React.js", "Avec Firebase", "Sur Codecademy"]
   const textelire = texte[this.state.NumberText]
+  const titrelire = titre[this.state.NumberText]
+
   if(this.state.isOnLightbox) {
   return (
   <div className="Intro">
     <div className="backgroundlightbox">
     <div className="lightbox">
       <div className="Headerlightbox">
-      <button onClick={this.toggleState}>shut the fuck up</button>
+      <h2>{titrelire}</h2>
+      <button onClick={this.toggleState}>X</button>
       </div>
+      <div className="textcontainer">
       <p>{textelire}</p>
+      </div>
     </div>
     </div>
 <section>
@@ -216,7 +222,7 @@ function SignOut() {
   return auth.currentUser && (
     <>
      <ReactTooltip globalEventOff="click" />
-    <button className="sign-out" data-tip="Cliquez ici pour vous déconnecter" onClick={() => auth.signOut()}>Déconnecter</button>
+    <button className="sign-out" data-tip="Cliquez ici pour vous déconnecter" onClick={() => auth.signOut()}><p>Déconnecter</p></button>
     </>
   )
 }
