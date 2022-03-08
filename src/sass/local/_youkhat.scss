@@ -10,7 +10,6 @@ body {
 }
 
 .App {
-
   #BoutonToggle {
     button {
       margin-top: 1vh;
@@ -33,6 +32,7 @@ body {
       position: fixed;
       left: 7.5vw;
       width: 80vw;
+      height: 70vh;
     }
 
     header {
@@ -48,6 +48,7 @@ body {
       padding: 0px 50px;
       box-sizing: border-box;
       border-radius: 30px 30px 0 0;
+      font-family: 'WaterSeven';
 
       button {
         width: 20vw;
@@ -79,7 +80,7 @@ body {
 
       @include phone {
         button {
-          height: 6.5vh;
+          height: 5vh;
         }
       }
 
@@ -97,6 +98,7 @@ body {
 
       @include tablet {
         width: 70vw;
+        height: 55vh;
       }
     }
   }
@@ -161,7 +163,7 @@ body {
     }
 
     @include phone {
-      font-size: 0.75rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -225,11 +227,13 @@ body {
     color: white;
     background: #0b93f6;
     align-self: flex-end;
+    font-family: 'Montserrat';
   }
 
   .received p {
     background: #e5e5ea;
     color: black;
+    font-family: 'Montserrat';
   }
 
   img {

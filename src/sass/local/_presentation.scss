@@ -133,11 +133,12 @@ body {
         background-color: rgba(0, 0, 0, 0.5);
         height: 100vh;
         z-index: 3;
+        
 
         .lightbox {
 
             @include tablet {
-                height: 80vh;
+                height: 75vh;
                 top: 10vh;
                 width: 80vw;
                 left: 10vw;
@@ -186,6 +187,7 @@ body {
                     text-align: left;
                     position: relative;
                     top: 3vh;
+                    font-family: 'WaterSeven';
 
                     @include tablet {
                         font-size: 2rem;
@@ -225,6 +227,7 @@ body {
             .textcontainer {
                 display: flex;
                 justify-content: flex-start;
+
                 p {
                     text-align: justify;
                     max-width: 100%;
@@ -233,6 +236,7 @@ body {
                     border-radius: 0px;
                     font-size: 1.25rem;
                     line-height: 30px;
+                    font-family: 'Montserrat';
                 }
 
             }
@@ -298,6 +302,7 @@ body {
             align-items: center;
             justify-content: center;
             display: flex;
+            font-family: 'WaterSeven';
 
             h1 {
                 font-size: 1.5em;
@@ -326,6 +331,7 @@ body {
 #BulleToggle {
     display: flex;
     justify-content: center;
+    font-family: 'WaterSeven';
 
     .bulle {
         display: flex;
