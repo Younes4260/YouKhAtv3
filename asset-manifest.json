@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/YouKhAtv3/static/css/main.5ad7f96d.chunk.css",
+    "main.css": "/YouKhAtv3/static/css/main.fd923211.chunk.css",
     "main.js": "/YouKhAtv3/static/js/main.d5a59de9.chunk.js",
     "main.js.map": "/YouKhAtv3/static/js/main.d5a59de9.chunk.js.map",
     "runtime-main.js": "/YouKhAtv3/static/js/runtime-main.09a0a7ad.js",
@@ -8,15 +8,15 @@
     "static/js/2.8f32db17.chunk.js": "/YouKhAtv3/static/js/2.8f32db17.chunk.js",
     "static/js/2.8f32db17.chunk.js.map": "/YouKhAtv3/static/js/2.8f32db17.chunk.js.map",
     "index.html": "/YouKhAtv3/index.html",
-    "precache-manifest.472f29d3ff2b78ed5f0f3a213cc94297.js": "/YouKhAtv3/precache-manifest.472f29d3ff2b78ed5f0f3a213cc94297.js",
+    "precache-manifest.b16b9d74b39329a97bd80caf78cc580f.js": "/YouKhAtv3/precache-manifest.b16b9d74b39329a97bd80caf78cc580f.js",
     "service-worker.js": "/YouKhAtv3/service-worker.js",
-    "static/css/main.5ad7f96d.chunk.css.map": "/YouKhAtv3/static/css/main.5ad7f96d.chunk.css.map",
+    "static/css/main.fd923211.chunk.css.map": "/YouKhAtv3/static/css/main.fd923211.chunk.css.map",
     "static/js/2.8f32db17.chunk.js.LICENSE.txt": "/YouKhAtv3/static/js/2.8f32db17.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.09a0a7ad.js",
     "static/js/2.8f32db17.chunk.js",
-    "static/css/main.5ad7f96d.chunk.css",
+    "static/css/main.fd923211.chunk.css",
     "static/js/main.d5a59de9.chunk.js"
   ]
 }
