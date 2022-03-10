@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Relax";
   src: local("Relax"),
     url("./fonts/Relax.ttf") format("truetype");
@@ -22,7 +22,7 @@ code {
   font-family: "WaterFire";
   src: local("WaterFire"),
     url("./fonts/WaterFire.otf") format("opentype");
-}
+} */
 
 @font-face {
   font-family: "Relaxing";
