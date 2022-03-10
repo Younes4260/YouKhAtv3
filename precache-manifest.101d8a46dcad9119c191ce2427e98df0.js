@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "17a8c040afdc1bddd77afbf6117a7cd1",
+    "revision": "a8268912f273514d1a1b683a0dc0238e",
     "url": "/YouKhAtv3/index.html"
   },
   {
-    "revision": "d44d06ede9349fc48fbe",
-    "url": "/YouKhAtv3/static/css/main.2879448d.chunk.css"
+    "revision": "e9aa4b22d0a166b12a79",
+    "url": "/YouKhAtv3/static/css/main.01b761e1.chunk.css"
   },
   {
     "revision": "a82767799857ebf6db88",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/YouKhAtv3/static/js/2.bd54298f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d44d06ede9349fc48fbe",
-    "url": "/YouKhAtv3/static/js/main.829c9fd6.chunk.js"
+    "revision": "e9aa4b22d0a166b12a79",
+    "url": "/YouKhAtv3/static/js/main.a8ab107a.chunk.js"
   },
   {
     "revision": "cdcef65542c4ce0857a2",
