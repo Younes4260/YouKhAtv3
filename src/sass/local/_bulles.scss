@@ -1,6 +1,9 @@
 @import './mixins';
 
-// a optimiser 
+/* Voilà tout ce qui gère l'animation et la taille des bulles. Le CSS est très mal optimisé, je n'avais pas eu le temps
+de l'améliorer */
+
+// On insère un background invisible pour que les bulles s'animent 
 #background-wrap {
     bottom: 0;
     left: 0;
@@ -10,7 +13,7 @@
     z-index: -1;
 }
 
-/* KEYFRAMES */
+/* Création des keyframes */
 
 .bulle {
     transition: transform ease 0.3s;
@@ -136,7 +139,7 @@
     }
 }
 
-/* ANIMATIONS */
+/* Animations des bulles */
 
 .x1 {
     -webkit-animation: animateBubble 37.5s linear infinite, sideWays 2s ease-in-out infinite alternate;
@@ -271,7 +274,7 @@
     transform: scale(0.3);
 }
 
-/* OBJECTS */
+/* Propriétés concernant la bulle de background en tant que telle */
 
 .bubble {
     -webkit-border-radius: 50%;
@@ -337,6 +340,8 @@
         width: 50px;
     }
 }
+
+/* Propriétés concernant la bulle qui permet d'accéder au prototype */
 
 .bullesection {
     -webkit-border-radius: 50%;

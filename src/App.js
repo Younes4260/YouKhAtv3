@@ -267,7 +267,7 @@ function ChatRoom() {
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
-/* On cherche le texte du form, le temps d'envoi, l'uid et l'url de la photo google de celui qui envoie un */
+/* On cherche le texte du form, le temps d'envoi, l'uid et l'url de la photo google de celui qui envoie un message */
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -309,6 +309,8 @@ function ChatMessage(props) {
   /* Si c'est nous qui envoyons un message, on ajoute la classe sent, sinon, on ajoute la classe received */
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
+  /* Cette ligne est une tentative d'ajouter une fonction pour supprimer des messages à partir d'un bouton. 
+  Elle fonctionne bien, mais manque beaucoup de détails pour en faire une fonction */
   // const DeleteMessage = firestore.collection('messages').doc('RAoTYP5A99uEfvmYc0dp').delete()
 
   return (</* Le contenu est finalement lu dans le site */>

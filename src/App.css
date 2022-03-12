@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/* Voilà tout ce qui gère l'animation et la taille des bulles. Le CSS est très mal optimisé, je n'avais pas eu le temps
+de l'améliorer */
 #background-wrap {
   bottom: 0;
   left: 0;
@@ -7,7 +10,7 @@
   z-index: -1;
 }
 
-/* KEYFRAMES */
+/* Création des keyframes */
 .bulle {
   transition: transform ease 0.3s;
   z-index: 1;
@@ -74,7 +77,7 @@
   }
 }
 
-/* ANIMATIONS */
+/* Animations des bulles */
 .x1 {
   animation: animateBubble 37.5s linear infinite, sideWays 2s ease-in-out infinite alternate;
   left: -5%;
@@ -148,7 +151,7 @@
   transform: scale(0.3);
 }
 
-/* OBJECTS */
+/* Propriétés concernant la bulle de background en tant que telle */
 .bubble {
   border-radius: 50%;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px white;
@@ -204,6 +207,7 @@
   }
 }
 
+/* Propriétés concernant la bulle qui permet d'accéder au prototype */
 .bullesection {
   border-radius: 50%;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px white;
@@ -251,6 +255,7 @@
   }
 }
 
+/* Ma palette de couleur se retrouve ici */
 body {
   background: #00D4FF;
   background: linear-gradient(169deg, #00D4FF 9%, #17A9E0 19%, #1a7fbf 31%, #1c5d9f 43%, #0e3c7c 56%, #0d2059 74%, #130a58 89%);
@@ -605,7 +610,10 @@ body {
   font-size: 3.5em;
 }
 
+/* Ma palette de couleur se retrouve ici */
+/* Tout le style concernant le prototype de retrouve ici */
 body {
+  /* Dégradé */
   background: #00D4FF;
   background: linear-gradient(169deg, #00D4FF 9%, #17A9E0 19%, #1a7fbf 31%, #1c5d9f 43%, #0e3c7c 56%, #0d2059 74%, #130a58 89%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$bleupale1, endColorstr=$bleufoncee3, GradientType=1);
@@ -615,10 +623,13 @@ body {
   margin-top: 1vh;
   transition: opacity 1s ease;
   height: 100vh;
-}
-
-.App #BoutonToggle button {
-  margin-top: 1vh;
+  /* Les messages reviennent dans cette balise */
+  /* Tout ce qui gère l'envoi des messages */
+  /* Le bouton de connection à Google quand on n'est pas connecté */
+  /* Le style des messages */
+  /* Le style des messages envoyés */
+  /* Le style des messages reçus */
+  /* L'image Google */
 }
 
 .App .Prototype {
@@ -628,6 +639,8 @@ body {
   border: black solid 10px;
   border-radius: 50px;
   height: 82.5vh;
+  /* Le header se constitue du texte YouKhAt avec le bouton déconnecter */
+  /* La section est nécessaire pour le placement de la balise main et du form */
 }
 
 @media only screen and (max-width: 65em) {
@@ -832,13 +845,11 @@ body {
   color: white;
   background: #0b93f6;
   align-self: flex-end;
-  font-family: 'Montserrat';
 }
 
 .App .received p {
   background: #e5e5ea;
   color: black;
-  font-family: 'Montserrat';
 }
 
 .App img {
@@ -848,6 +859,7 @@ body {
   margin: 2px 5px;
 }
 
+/* Le bouton qui permet de retourner à la présentation */
 #BoutonToggle {
   display: flex;
   justify-content: center;
@@ -857,4 +869,8 @@ body {
 #BoutonToggle h1 {
   color: rgba(255, 255, 255, 0.5);
   font-size: 2.5em;
+}
+
+#BoutonToggle button {
+  margin-top: 1vh;
 }

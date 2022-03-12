@@ -1,7 +1,10 @@
 @import './colors';
 @import './mixins';
 
+/* Tout le style concernant le prototype de retrouve ici */
+
 body {
+  /* Dégradé */
   background: $bleupale1;
   background: -moz-linear-gradient(169deg, $bleupale1 9%, $bleupale2 19%, $bleu1 31%, $bleu2 43%, $bleufoncee1 56%, $bleufoncee2 74%, $bleufoncee3 89%);
   background: -webkit-linear-gradient(169deg, $bleupale1 9%, $bleupale2 19%, $bleu1 31%, $bleu2 43%, $bleufoncee1 56%, $bleufoncee2 74%, $bleufoncee3 89%);
@@ -10,11 +13,6 @@ body {
 }
 
 .App {
-  #BoutonToggle {
-    button {
-      margin-top: 1vh;
-    }
-  }
 
   margin-top: 1vh;
   transition: opacity 1s ease;
@@ -35,6 +33,7 @@ body {
       height: 70vh;
     }
 
+    /* Le header se constitue du texte YouKhAt avec le bouton déconnecter */
     header {
       height: 10vh;
       min-height: 50px;
@@ -55,6 +54,7 @@ body {
         height: 7vh;
         padding: 0;
         margin: 0;
+
         p {
           padding: 0;
           margin: 0;
@@ -86,6 +86,7 @@ body {
 
     }
 
+    /* La section est nécessaire pour le placement de la balise main et du form */
     section {
       background-color: $bleufoncee3;
       display: flex;
@@ -102,6 +103,8 @@ body {
       }
     }
   }
+
+  /* Les messages reviennent dans cette balise */
 
   main {
     padding: 10px;
@@ -123,6 +126,7 @@ body {
     background: $bleu1;
   }
 
+  /* Tout ce qui gère l'envoi des messages */
   form {
     height: 10vh;
     position: relative;
@@ -185,7 +189,7 @@ body {
     }
   }
 
-
+  /* Le bouton de connection à Google quand on n'est pas connecté */
   .sign-in {
     color: #282c34;
     background: white;
@@ -213,12 +217,13 @@ body {
     text-align: center;
   }
 
+  /* Le style des messages */
   .message {
     display: flex;
     align-items: center;
   }
 
-
+  /* Le style des messages envoyés */
   .sent {
     flex-direction: row-reverse;
   }
@@ -227,15 +232,15 @@ body {
     color: white;
     background: #0b93f6;
     align-self: flex-end;
-    font-family: 'Montserrat';
   }
 
+  /* Le style des messages reçus */
   .received p {
     background: #e5e5ea;
     color: black;
-    font-family: 'Montserrat';
   }
 
+  /* L'image Google */
   img {
     width: 40px;
     height: 40px;
@@ -243,6 +248,8 @@ body {
     margin: 2px 5px;
   }
 }
+
+/* Le bouton qui permet de retourner à la présentation */
 
 #BoutonToggle {
   display: flex;
@@ -252,5 +259,9 @@ body {
   h1 {
     color: rgba(255, 255, 255, 0.5);
     font-size: 2.5em;
+  }
+
+  button {
+    margin-top: 1vh;
   }
 }
